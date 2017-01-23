@@ -1,0 +1,31 @@
+﻿I am done with coding of problem sent by you using ASP.NET and code is attached. You can test the code using following two ways.
+
+1. Test using web interface
+http://rktdc.azurewebsites.net/swagger/ui/index.html
+On this URL you can see list of three endpoints current, next, register. You can test each endpoint by opening "List Operations" then using "Try it out" button after filling values as mentioned below.
+
+a. Current (GET): Authorization Value = Bearer 3a796ad3-b891-4047-873d-04165b4cf940
+b. Current (Put): Current = <any number you want>
+    Authorization Value = Bearer 3a796ad3-b891-4047-873d-04165b4cf940
+    c. Next (GET): Authorization Value = Bearer 3a796ad3-b891-4047-873d-04165b4cf940
+    d. Register (POST):
+    value= {
+    "email": "email@email.com",
+    "password": "string"
+    }
+
+
+    2. Test using curl commands
+
+    a. Next GET Endpoint: This will return next incremented number for test API key 3a796ad3-b891-4047-873d-04165b4cf940
+
+    curl http://rktdc.azurewebsites.net/v1/next -H "Authorization: Bearer 3a796ad3-b891-4047-873d-04165b4cf940"
+
+    b. Current GET Endpoint: This will return current number for the test API key 3a796ad3-b891-4047-873d-04165b4cf940
+
+    curl http://rktdc.azurewebsites.net/v1/current -H "Authorization: Bearer 3a796ad3-b891-4047-873d-04165b4cf940"
+
+    c. Current PUT Endpoint: This will set number sent in request like 999 for the test API key 3a796ad3-b891-4047-873d-04165b4cf940
+
+    curl http://rktdc.azurewebsites.net/v1/current/999 -X PUT --header "Authorization: Bearer 3a796ad3-b891-4047-873d-04165b4cf940" --header "Accept: application/json" -d ""
+
